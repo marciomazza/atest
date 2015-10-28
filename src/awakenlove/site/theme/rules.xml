@@ -2,10 +2,14 @@
 <rules
   xmlns="http://namespaces.plone.org/diazo"
   xmlns:css="http://namespaces.plone.org/diazo/css"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
 
-  <!-- Apply the following rules to standard Plone pages -->
-  <rules css:if-content="#visual-portal-wrapper">
+  <!-- Include the backend theme -->
+  <xi:include href="++theme++barceloneta/backend.xml" />
+
+  <!-- Only theme front end pages -->
+  <rules css:if-content="body.frontend#visual-portal-wrapper">
 
     <theme href="index.html" />
 
