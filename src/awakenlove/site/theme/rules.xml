@@ -124,12 +124,6 @@
       css:theme-children="#content"
       />
 
-    <!-- FOOTER -->
-    <replace
-      css:content="#portal-siteactions"
-      css:theme-children="footer"
-      />
-
   </rules>
 
 </rules>
