@@ -1,0 +1,55 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="awakenlove.site">
+
+  <includeDependencies package="." />
+
+  <i18n:registerTranslations directory="locales" />
+
+  <include package=".browser" />
+
+  <plone:static
+      directory="theme"
+      type="theme"
+      name="awakenlove.site"
+      />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="awakenlove.site"
+      directory="profiles/default"
+      description="Installs the awakenlove.site add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="awakenlove.site-postInstall"
+      title="awakenlove.site post_install import step"
+      description="Post install import step from awakenlove.site"
+      handler=".setuphandlers.post_install">
+  </genericsetup:importStep>
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="awakenlove.site"
+      directory="profiles/uninstall"
+      description="Uninstalls the awakenlove.site add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="awakenlove.site-uninstall"
+      title="awakenlove.site uninstall import step"
+      description="Import step run during ininstalling awakenlove.site"
+      handler=".setuphandlers.uninstall">
+  </genericsetup:importStep>
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="awakenlove.site-hiddenprofiles" />
+
+</configure>

@@ -1,0 +1,6 @@
+[report]
+include =
+    src/awakenlove/*
+omit =
+    */test*
+    */upgrades/*
