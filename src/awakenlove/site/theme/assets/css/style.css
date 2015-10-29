@@ -8038,3 +8038,14 @@ a.fc-more:hover {
 .fc-time-grid-event .fc-resizer:after {
     content: "="
 }
+
+/* fix conflict with barceloneta */
+/* [class^="icon-"]:before, [class*=" icon-"]:before { */
+.content [class^="icon-"]:before, .content [class*=" icon-"]:before,
+header.header [class^="icon-"]:before, header.header [class*=" icon-"]:before {
+  font-family: "icomoon";
+}
+/* fix base color */
+.content, header.header {
+  color: #f7f7f7;
+}
