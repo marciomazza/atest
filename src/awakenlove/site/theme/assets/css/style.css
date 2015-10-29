@@ -8049,3 +8049,6 @@ header.header [class^="icon-"]:before, header.header [class*=" icon-"]:before {
 .content, header.header {
   color: #f7f7f7;
 }
+/* fix toolbar icon-view */
+#contentview-view .icon-view:before { content: '\e807';  } /* '' */
+
