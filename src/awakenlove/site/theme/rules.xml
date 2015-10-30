@@ -52,7 +52,19 @@
 		<copy attributes="class"
 			css:theme=".content" css:content="#content-class-for-diazo-banner" />
 
-
+		<!-- section menu -->
+		<replace css:theme-children=".header__breadcrumb .container">
+			<xsl:for-each css:select=".navTreeTopNode a">
+				<li class="header__breadcrumb-item category">
+					<xsl:copy-of select="current()"/>
+				</li>
+			</xsl:for-each>
+			<xsl:for-each css:select=".navTreeItem:not(.navTreeTopNode) a">
+				<li class="header__breadcrumb-item">
+					<xsl:copy-of select="current()"/>
+				</li>
+			</xsl:for-each>
+		</replace>
 
     <!-- CONTENT -->
     <replace
