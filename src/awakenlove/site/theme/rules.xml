@@ -55,14 +55,32 @@
 		<!-- section menu -->
 		<replace css:theme-children=".header__breadcrumb .container">
 			<xsl:for-each css:select=".navTreeTopNode a">
-				<li class="header__breadcrumb-item category">
-					<xsl:copy-of select="current()"/>
-				</li>
+				<xsl:choose>
+					<xsl:when test="contains(@class,'navTreeCurrentItem')">
+						<li class="header__breadcrumb-item category active">
+							<xsl:copy-of select="current()"/>
+						</li>
+					</xsl:when>
+					<xsl:otherwise>
+						<li class="header__breadcrumb-item category">
+							<xsl:copy-of select="current()"/>
+						</li>
+					</xsl:otherwise>
+				</xsl:choose>
 			</xsl:for-each>
 			<xsl:for-each css:select=".navTreeItem:not(.navTreeTopNode) a">
-				<li class="header__breadcrumb-item">
-					<xsl:copy-of select="current()"/>
-				</li>
+				<xsl:choose>
+					<xsl:when test="contains(@class,'navTreeCurrentNode')">
+						<li class="header__breadcrumb-item active">
+							<xsl:copy-of select="current()"/>
+						</li>
+					</xsl:when>
+					<xsl:otherwise>
+						<li class="header__breadcrumb-item">
+							<xsl:copy-of select="current()"/>
+						</li>
+					</xsl:otherwise>
+				</xsl:choose>
 			</xsl:for-each>
 		</replace>
 
