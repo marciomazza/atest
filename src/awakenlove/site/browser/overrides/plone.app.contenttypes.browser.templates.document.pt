@@ -20,6 +20,11 @@
 	tal:condition="context/banner_image"
 	tal:attributes="src string:${context/absolute_url}/@@images/banner_image" />
 
+<!-- XXX: hack: this div is here just for diazo to get a class attribute -->
+<div id="content-class-for-diazo-no-banner"
+	tal:condition="not: context/banner_image"
+	class="content content--inside no--banner"></div>
+
 </metal:content-core>
 </body>
 </html>
