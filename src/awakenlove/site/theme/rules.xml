@@ -38,6 +38,7 @@
       css:theme="#user-name"
       />
 
+		<!-- heading -->
   	<replace
   	  css:content="h1.documentFirstHeading"
       css:theme=".content__section--inside-title h1" />
@@ -46,7 +47,8 @@
 		<drop css:theme="section.main__banner" css:if-not-content="#banner_image"/>
 		<replace
 			css:content="#banner_image"
-			css:theme-children=".main__banner--inside picture" />
+			css:theme-children=".main__banner--inside picture" method="raw"/>
+		<drop css:content="#banner_image" />
 
 		<!-- XXX: hack to add a class attribute -->
 		<copy attributes="class"
@@ -86,7 +88,7 @@
 
     <!-- CONTENT -->
     <replace
-      css:content-children="#parent-fieldname-text"
+      css:content-children="#content-core"
       css:theme="#content-slot"
       />
 
