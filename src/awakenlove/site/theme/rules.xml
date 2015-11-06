@@ -86,14 +86,21 @@
 			</xsl:for-each>
 		</replace>
 
+    <!-- DESCRIPTION -->
+    <replace
+      css:content-children=".documentDescription"
+      css:theme-children="#z__description"
+      />
+
+    <!-- BUTTONS -->
+    <!-- TODO -->
+    <drop css:theme=".content__inside-button-painel" />
+
     <!-- CONTENT -->
     <replace
       css:content-children="#content-core"
-      css:theme="#content-slot"
+      css:theme-children="#z__content-core"
       />
 
-
-
   </rules>
-
 </rules>
